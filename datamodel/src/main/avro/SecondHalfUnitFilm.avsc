@@ -1,0 +1,55 @@
+{
+  "namespace": "films.unit",
+  "type": "record",
+  "name": "SecondHalfUnitFilm",
+  "fields": [
+    {
+      "name": "boxoffice",
+      "type": "string"
+    },
+    {
+      "name": "releaseDate",
+      "type": "string"
+    },
+    {
+      "name": "netflixReleaseDate",
+      "type": "string"
+    },
+    {
+      "name": "productionHouse",
+      "type": "string"
+    },
+    {
+      "name": "linkNetflix",
+      "type": "string"
+    },
+    {
+      "name": "linkIMDb",
+      "type": "string"
+    },
+    {
+      "name": "summary",
+      "type": "string"
+    },
+    {
+      "name": "votesIMDb",
+      "type": "string"
+    },
+    {
+      "name": "image",
+      "type": "string"
+    },
+    {
+      "name": "poster",
+      "type": "string"
+    },
+    {
+      "name": "trailerTMDb",
+      "type": "string"
+    },
+    {
+      "name": "trailerSite",
+      "type": "string"
+    }
+  ]
+}

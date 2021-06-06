@@ -1,0 +1,19 @@
+{
+  "namespace": "loadingEvent",
+  "type": "record",
+  "name": "LoadingDetails",
+  "fields": [
+    {
+      "name": "nameFile",
+      "type": "string"
+    },
+    {
+      "name": "timeLoading",
+      "type": "string"
+    },
+    {
+      "name": "causeError",
+      "type": "string"
+    }
+  ]
+}

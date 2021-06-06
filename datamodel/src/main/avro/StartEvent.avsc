@@ -1,0 +1,15 @@
+{
+  "namespace": "film",
+  "type": "record",
+  "name": "StartEvent",
+  "fields": [
+    {
+      "name": "nameEvent",
+      "type": "string"
+    },
+    {
+      "name": "timeEvent",
+      "type": "string"
+    }
+  ]
+}

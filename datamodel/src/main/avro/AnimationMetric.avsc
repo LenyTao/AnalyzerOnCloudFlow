@@ -1,0 +1,23 @@
+{
+  "namespace": "film",
+  "type": "record",
+  "name": "AnimationMetric",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "score",
+      "type": "string"
+    },
+    {
+      "name": "votes",
+      "type": "string"
+    }
+  ]
+}
