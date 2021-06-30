@@ -22,7 +22,7 @@ lazy val root =
       animationStatistic,
       anygenreStatistic,
       totalStatistic,
-      stageJournal
+//      stageJournal
     )
 
 lazy val datamodel = (project in file("./datamodel"))
@@ -91,16 +91,16 @@ lazy val totalStatistic = (project in file("./total-statistic"))
     )
   ).dependsOn(datamodel)
 
-lazy val stageJournal = (project in file("./stage-journal"))
-  .enablePlugins(CloudflowSparkPlugin)
-  .settings(
-    commonSettings,
-    libraryDependencies ++= Seq(
-      "ch.qos.logback" % "logback-classic" % logbackVersion,
-      "org.scalatest"  %% "scalatest"      % scalatestVersion % "test"
-    )
-  )
-  .dependsOn(datamodel)
+//lazy val stageJournal = (project in file("./stage-journal"))
+//  .enablePlugins(CloudflowSparkPlugin)
+//  .settings(
+//    commonSettings,
+//    libraryDependencies ++= Seq(
+//      "ch.qos.logback" % "logback-classic" % logbackVersion,
+//      "org.scalatest"  %% "scalatest"      % scalatestVersion % "test"
+//    )
+//  )
+//  .dependsOn(datamodel)
 
 lazy val commonSettings = Seq(
   organization := "com.lightbend.cloudflow",

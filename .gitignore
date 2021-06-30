@@ -8,3 +8,4 @@ target/
 
 # SCALA build server protocol
 .bsp/
+/bsp

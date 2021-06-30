@@ -18,7 +18,7 @@ class AkkaDataExtractorStreamlet extends AkkaStreamlet {
 
   private val outLoadingDetails = AvroOutlet[LoadingDetails]("out-details").withPartitioner(RoundRobinPartitioner)
   private val outFilm           = AvroOutlet[Film]("out-film").withPartitioner(RoundRobinPartitioner)
-  private val outStatus         = AvroOutlet[StartEvent]("out-event-loader").withPartitioner(RoundRobinPartitioner)
+//  private val outStatus         = AvroOutlet[StartEvent]("out-event-loader").withPartitioner(RoundRobinPartitioner)
   private var counterRecords    = -1
 
   override protected def createLogic(): AkkaStreamletLogic = new RunnableGraphStreamletLogic {
@@ -116,10 +116,10 @@ class AkkaDataExtractorStreamlet extends AkkaStreamlet {
         Source(
           List(StartEvent("DataExtractor starting", new Date().toString))
         )
-      sourceEvent.to(plainSink(outStatus))
+//      sourceEvent.to(plainSink(outStatus)).run()
 
       sourceFilm.to(plainSink(outFilm))
     }
   }
-  override def shape(): StreamletShape = StreamletShape.withOutlets(outFilm, outLoadingDetails, outStatus)
+  override def shape(): StreamletShape = StreamletShape.withOutlets(outFilm, outLoadingDetails/*, outStatus*/)
 }

@@ -15,7 +15,7 @@ class AkkaAnyGenreStatisticStreamlet extends AkkaStreamlet {
   private val outAnyGenreMetric =
     AvroOutlet[AnyGenreMetric]("out-metric-anygenre").withPartitioner(RoundRobinPartitioner)
 
-  private val outStatus = AvroOutlet[StartEvent]("out-event-anygenre").withPartitioner(RoundRobinPartitioner)
+//  private val outStatus = AvroOutlet[StartEvent]("out-event-anygenre").withPartitioner(RoundRobinPartitioner)
 
   override protected def createLogic(): AkkaStreamletLogic = new RunnableGraphStreamletLogic {
 
@@ -29,10 +29,10 @@ class AkkaAnyGenreStatisticStreamlet extends AkkaStreamlet {
           List(StartEvent("Any Genre statistic starting", new Date().toString))
         )
 
-      sourceEvent.to(plainSink(outStatus))
+//      sourceEvent.to(plainSink(outStatus)).run()
 
       sourceWithCommittableContext(inAnyGenre).via(flow).to(committableSink(outAnyGenreMetric))
     }
   }
-  override def shape(): StreamletShape = StreamletShape.withInlets(inAnyGenre).withOutlets(outAnyGenreMetric, outStatus)
+  override def shape(): StreamletShape = StreamletShape.withInlets(inAnyGenre).withOutlets(outAnyGenreMetric/*, outStatus*/)
 }

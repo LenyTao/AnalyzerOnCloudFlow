@@ -15,7 +15,7 @@ class AkkaAnimationStatisticStreamlet extends AkkaStreamlet {
   private val outAnimationMetric =
     AvroOutlet[AnimationMetric]("out-metric-animation").withPartitioner(RoundRobinPartitioner)
 
-  private val outStatus = AvroOutlet[StartEvent]("out-event-animation").withPartitioner(RoundRobinPartitioner)
+//  private val outStatus = AvroOutlet[StartEvent]("out-event-animation").withPartitioner(RoundRobinPartitioner)
 
   override protected def createLogic(): AkkaStreamletLogic = new RunnableGraphStreamletLogic {
 
@@ -29,12 +29,12 @@ class AkkaAnimationStatisticStreamlet extends AkkaStreamlet {
           List(StartEvent("Animation Statistic starting", new Date().toString))
         )
 
-      sourceEvent.to(plainSink(outStatus))
+//      sourceEvent.to(plainSink(outStatus)).run()
 
       sourceWithCommittableContext(inAnimation).via(flow).to(committableSink(outAnimationMetric))
     }
   }
 
   override def shape(): StreamletShape =
-    StreamletShape.withInlets(inAnimation).withOutlets(outAnimationMetric, outStatus)
+    StreamletShape.withInlets(inAnimation).withOutlets(outAnimationMetric/*, outStatus*/)
 }

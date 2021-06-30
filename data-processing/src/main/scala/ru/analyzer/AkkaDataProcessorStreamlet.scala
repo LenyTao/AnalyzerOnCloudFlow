@@ -16,7 +16,7 @@ class AkkaDataProcessorStreamlet extends AkkaStreamlet {
   private val inFilm       = AvroInlet[Film]("in-film")
   private val outAnimation = AvroOutlet[Animation]("out-animation").withPartitioner(RoundRobinPartitioner)
   private val outAnyGenre  = AvroOutlet[AnyGenre]("out-anygenre").withPartitioner(RoundRobinPartitioner)
-  private val outStatus    = AvroOutlet[StartEvent]("out-event-processor").withPartitioner(RoundRobinPartitioner)
+//  private val outStatus    = AvroOutlet[StartEvent]("out-event-processor").withPartitioner(RoundRobinPartitioner)
 
   override protected def createLogic(): AkkaStreamletLogic = new RunnableGraphStreamletLogic {
     private var counterAnyGenre  = -1
@@ -58,12 +58,12 @@ class AkkaDataProcessorStreamlet extends AkkaStreamlet {
           List(StartEvent("DataProcessor starting", new Date().toString))
         )
 
-      sourceEvent.to(plainSink(outStatus))
+//      sourceEvent.to(plainSink(outStatus)).run()
 
       sourceWithCommittableContext(inFilm).to(Splitter.sink(splitterForGenreFlow, outAnyGenre, outAnimation))
     }
   }
 
   override def shape(): StreamletShape =
-    StreamletShape.withInlets(inFilm).withOutlets(outAnimation, outAnyGenre, outStatus)
+    StreamletShape.withInlets(inFilm).withOutlets(outAnimation, outAnyGenre/*, outStatus*/)
 }
