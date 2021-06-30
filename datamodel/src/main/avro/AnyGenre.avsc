@@ -1,0 +1,23 @@
+{
+  "namespace": "film",
+  "type": "record",
+  "name": "AnyGenre",
+  "fields": [
+    {
+      "name": "anyGenreID",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "score",
+      "type": "string"
+    },
+    {
+      "name": "votes",
+      "type": "string"
+    }
+  ]
+}

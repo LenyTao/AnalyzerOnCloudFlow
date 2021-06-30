@@ -1,0 +1,143 @@
+{
+  "namespace": "films.unit",
+  "type": "record",
+  "name": "Film",
+  "fields": [
+    {
+      "name": "fileName",
+      "type": "string"
+    },
+    {
+      "name": "recordID",
+      "type": "string"
+    },
+    {
+      "name": "firstHalf",
+      "type": "FirstHalfUnitFilm",
+      "fields": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "genre",
+          "type": "string"
+        },
+        {
+          "name": "tags",
+          "type": "string"
+        },
+        {
+          "name": "languages",
+          "type": "string"
+        },
+        {
+          "name": "typeFilm",
+          "type": "string"
+        },
+        {
+          "name": "rating",
+          "type": "string"
+        },
+        {
+          "name": "countryAvailability",
+          "type": "string"
+        },
+        {
+          "name": "runtime",
+          "type": "string"
+        },
+        {
+          "name": "director",
+          "type": "string"
+        },
+        {
+          "name": "writer",
+          "type": "string"
+        },
+        {
+          "name": "actors",
+          "type": "string"
+        },
+        {
+          "name": "viewRating",
+          "type": "string"
+        },
+        {
+          "name": "scoreIMDb",
+          "type": "string"
+        },
+        {
+          "name": "scoreRottenTomatoes",
+          "type": "string"
+        },
+        {
+          "name": "scoreMetacritic",
+          "type": "string"
+        },
+        {
+          "name": "awardsReceived",
+          "type": "string"
+        },
+        {
+          "name": "awardsNominatedFor",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "secondHalf",
+      "type": "SecondHalfUnitFilm",
+      "fields": [
+        {
+          "name": "boxoffice",
+          "type": "string"
+        },
+        {
+          "name": "releaseDate",
+          "type": "string"
+        },
+        {
+          "name": "netflixReleaseDate",
+          "type": "string"
+        },
+        {
+          "name": "productionHouse",
+          "type": "string"
+        },
+        {
+          "name": "linkNetflix",
+          "type": "string"
+        },
+        {
+          "name": "linkIMDb",
+          "type": "string"
+        },
+        {
+          "name": "summary",
+          "type": "string"
+        },
+        {
+          "name": "votesIMDb",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "string"
+        },
+        {
+          "name": "poster",
+          "type": "string"
+        },
+        {
+          "name": "trailerTMDb",
+          "type": "string"
+        },
+        {
+          "name": "trailerSite",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
